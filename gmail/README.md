@@ -32,6 +32,9 @@ Auth is OAuth 2.0 against Google. Cursor prompts for Google sign-in when the plu
 - Google MCP setup: https://developers.google.com/workspace/gmail/api/guides/configure-mcp-server
 - Workspace MCP overview: https://developers.google.com/workspace/guides/configure-mcp-servers
 
+Logo is the official Gmail product icon:
+https://www.gstatic.com/images/branding/productlogos/gmail_2026/v1/192px.svg
+
 ## License
 
 MIT

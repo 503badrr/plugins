@@ -32,6 +32,9 @@ Auth is OAuth 2.0 against Google. Cursor prompts for Google sign-in when the plu
 - Google MCP setup: https://developers.google.com/workspace/slides/api/guides/configure-mcp-server
 - Workspace MCP overview: https://developers.google.com/workspace/guides/configure-mcp-servers
 
+Logo is the official Google Slides product icon:
+https://www.gstatic.com/images/branding/productlogos/slides_2026/v1/192px.svg
+
 ## License
 
 MIT
