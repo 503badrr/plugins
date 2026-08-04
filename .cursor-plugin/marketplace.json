@@ -75,17 +75,17 @@
     },
     {
       "name": "gmail",
-      "source": "gmail",
+      "source": "third_party/gmail",
       "description": "Connect Cursor to Gmail via Google's remote MCP server — search, read, draft, label, and manage email."
     },
     {
       "name": "google-drive",
-      "source": "google-drive",
+      "source": "third_party/google-drive",
       "description": "Connect Cursor to Google Drive via Google's remote MCP server — search, read, create, share, and manage files."
     },
     {
       "name": "google-calendar",
-      "source": "google-calendar",
+      "source": "third_party/google-calendar",
       "description": "Connect Cursor to Google Calendar via Google's remote MCP server — list calendars, search events, and create or update meetings."
     },
     {

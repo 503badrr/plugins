@@ -17,9 +17,9 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `cursor-sdk` | [Cursor SDK](cursor-sdk/) | Cursor | Developer Tools | Build apps, scripts, CI pipelines, and automations on top of the Cursor TypeScript SDK (@cursor/sdk) — runtime selection, auth, streaming, MCP, error handling, and ready-to-extend integration patterns. |
 | `orchestrate` | [Orchestrate](orchestrate/) | Cursor | Developer Tools | Fan large tasks out across parallel Cursor cloud agents with planners, workers, verifiers, and structured handoffs. |
 | `pstack` | [pstack](pstack/) | Lauren Tan | Developer Tools | if you want to go fast, go deep first. pstack helps you write less, but higher quality code. rigorous agent workflows you can parallelize with confidence. |
-| `gmail` | [Gmail](gmail/) | Cursor | Productivity | Connect Cursor to Gmail via Google's remote MCP server — search, read, draft, label, and manage email. |
-| `google-drive` | [Google Drive](google-drive/) | Cursor | Productivity | Connect Cursor to Google Drive via Google's remote MCP server — search, read, create, share, and manage files. |
-| `google-calendar` | [Google Calendar](google-calendar/) | Cursor | Productivity | Connect Cursor to Google Calendar via Google's remote MCP server — list calendars, search events, and create or update meetings. |
+| `gmail` | [Gmail](third_party/gmail/) | Cursor | Productivity | Connect Cursor to Gmail via Google's remote MCP server — search, read, draft, label, and manage email. |
+| `google-drive` | [Google Drive](third_party/google-drive/) | Cursor | Productivity | Connect Cursor to Google Drive via Google's remote MCP server — search, read, create, share, and manage files. |
+| `google-calendar` | [Google Calendar](third_party/google-calendar/) | Cursor | Productivity | Connect Cursor to Google Calendar via Google's remote MCP server — list calendars, search events, and create or update meetings. |
 | `gong` | [Gong](third_party/gong/) | Cursor | Integrations | Gong MCP integration for revenue intelligence — account summaries, deal insights, and call briefs. |
 | `salesforce` | [Salesforce](third_party/salesforce/) | Cursor | Integrations | Connect Cursor to Salesforce via Salesforce Hosted MCP — query, search, create, update, and traverse records in your org. |
 
