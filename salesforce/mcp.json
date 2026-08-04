@@ -1,0 +1,13 @@
+{
+  "$schema": "https://cursor.com/schemas/mcp.json",
+  "mcpServers": {
+    "salesforce": {
+      "type": "http",
+      "url": "${SALESFORCE_MCP_URL}",
+      "auth": {
+        "CLIENT_ID": "${CLIENT_ID}",
+        "scopes": ["mcp_api", "refresh_token"]
+      }
+    }
+  }
+}

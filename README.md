@@ -20,6 +20,8 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `gmail` | [Gmail](gmail/) | Cursor | Productivity | Connect Cursor to Gmail via Google's remote MCP server — search, read, draft, label, and manage email. |
 | `google-drive` | [Google Drive](google-drive/) | Cursor | Productivity | Connect Cursor to Google Drive via Google's remote MCP server — search, read, create, share, and manage files. |
 | `google-calendar` | [Google Calendar](google-calendar/) | Cursor | Productivity | Connect Cursor to Google Calendar via Google's remote MCP server — list calendars, search events, and create or update meetings. |
+| `gong` | [Gong](gong/) | Cursor | Integrations | Gong MCP integration for revenue intelligence — account summaries, deal insights, and call briefs. |
+| `salesforce` | [Salesforce](salesforce/) | Cursor | Integrations | Connect Cursor to Salesforce via Salesforce Hosted MCP — query, search, create, update, and traverse records in your org. |
 
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 

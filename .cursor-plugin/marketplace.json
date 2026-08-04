@@ -87,6 +87,16 @@
       "name": "google-calendar",
       "source": "google-calendar",
       "description": "Connect Cursor to Google Calendar via Google's remote MCP server — list calendars, search events, and create or update meetings."
+    },
+    {
+      "name": "gong",
+      "source": "gong",
+      "description": "Gong MCP integration for revenue intelligence — account summaries, deal insights, and call briefs."
+    },
+    {
+      "name": "salesforce",
+      "source": "salesforce",
+      "description": "Connect Cursor to Salesforce via Salesforce Hosted MCP — query, search, create, update, and traverse records in your org."
     }
   ]
 }
