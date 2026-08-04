@@ -87,21 +87,6 @@
       "name": "google-calendar",
       "source": "google-calendar",
       "description": "Connect Cursor to Google Calendar via Google's remote MCP server — list calendars, search events, and create or update meetings."
-    },
-    {
-      "name": "google-docs",
-      "source": "google-docs",
-      "description": "Connect Cursor to Google Docs via Google's remote MCP server — read and update documents."
-    },
-    {
-      "name": "google-sheets",
-      "source": "google-sheets",
-      "description": "Connect Cursor to Google Sheets via Google's remote MCP server — read spreadsheets, update values and formulas."
-    },
-    {
-      "name": "google-slides",
-      "source": "google-slides",
-      "description": "Connect Cursor to Google Slides via Google's remote MCP server — read and update presentations."
     }
   ]
 }
