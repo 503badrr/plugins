@@ -20,9 +20,6 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `gmail` | [Gmail](gmail/) | Cursor | Productivity | Connect Cursor to Gmail via Google's remote MCP server — search, read, draft, label, and manage email. |
 | `google-drive` | [Google Drive](google-drive/) | Cursor | Productivity | Connect Cursor to Google Drive via Google's remote MCP server — search, read, create, share, and manage files. |
 | `google-calendar` | [Google Calendar](google-calendar/) | Cursor | Productivity | Connect Cursor to Google Calendar via Google's remote MCP server — list calendars, search events, and create or update meetings. |
-| `google-docs` | [Google Docs](google-docs/) | Cursor | Productivity | Connect Cursor to Google Docs via Google's remote MCP server — read and update documents. |
-| `google-sheets` | [Google Sheets](google-sheets/) | Cursor | Productivity | Connect Cursor to Google Sheets via Google's remote MCP server — read spreadsheets, update values and formulas. |
-| `google-slides` | [Google Slides](google-slides/) | Cursor | Productivity | Connect Cursor to Google Slides via Google's remote MCP server — read and update presentations. |
 
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 
