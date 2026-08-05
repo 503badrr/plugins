@@ -10,6 +10,7 @@
   "homepage": "https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/cursor.html",
   "repository": "https://github.com/cursor/plugins",
   "license": "MIT",
+  "logo": "assets/logo.svg",
   "keywords": [
     "salesforce",
     "crm",
