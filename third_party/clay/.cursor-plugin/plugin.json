@@ -1,0 +1,18 @@
+{
+	"name": "clay",
+	"displayName": "Clay",
+	"version": "1.0.0",
+	"description": "Connect Cursor to Clay via Clay's hosted MCP server — find and enrich people and companies across 150+ data providers, run AI research agents, and trigger your team's approved Clay workflows.",
+	"author": {
+		"name": "Cursor",
+		"email": "plugins@cursor.com"
+	},
+	"homepage": "https://university.clay.com/docs/connect-to-clay-mcp",
+	"repository": "https://github.com/cursor/plugins",
+	"license": "MIT",
+	"logo": "assets/logo.png",
+	"keywords": ["clay", "enrichment", "prospecting", "gtm", "sales", "data", "mcp"],
+	"category": "integrations",
+	"tags": ["mcp", "sales", "data"],
+	"mcpServers": "./mcp.json"
+}
