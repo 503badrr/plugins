@@ -117,6 +117,11 @@
       "name": "zoominfo",
       "source": "third_party/zoominfo",
       "description": "Connect Cursor to ZoomInfo — company and contact search, enrichment, buyer intent signals, scoops, and account research — via ZoomInfo's official remote MCP server."
+    },
+    {
+      "name": "zoom",
+      "source": "third_party/zoom",
+      "description": "Zoom MCP integration — search meetings and recordings, pull summaries and transcripts, and work with Zoom Docs."
     }
   ]
 }
