@@ -23,8 +23,6 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `gong` | [Gong](third_party/gong/) | Cursor | Integrations | Gong MCP integration for revenue intelligence — account summaries, deal insights, and call briefs. |
 | `salesforce` | [Salesforce](third_party/salesforce/) | Cursor | Integrations | Connect Cursor to Salesforce via Salesforce Hosted MCP — query, search, create, update, and traverse records in your org. |
 | `apollo-io` | [Apollo.io](third_party/apollo-io/) | Cursor | Integrations | Connect Cursor to Apollo.io — prospect search, contact and company enrichment, lists, sequences, and one-off emails — via Apollo's official remote MCP server. |
-| `zoominfo` | [ZoomInfo](third_party/zoominfo/) | Cursor | Integrations | Connect Cursor to ZoomInfo — company and contact search, enrichment, buyer intent signals, scoops, and account research — via ZoomInfo's official remote MCP server. |
-
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 
 ## Repository structure
