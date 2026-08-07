@@ -117,6 +117,11 @@
       "name": "zoom",
       "source": "third_party/zoom",
       "description": "Zoom MCP integration — search meetings and recordings, pull summaries and transcripts, and work with Zoom Docs."
+    },
+    {
+      "name": "x",
+      "source": "third_party/x",
+      "description": "Read-only access to the X API — search posts and users, read timelines and mentions, and pull trends and news — via X's official hosted MCP server."
     }
   ]
 }
