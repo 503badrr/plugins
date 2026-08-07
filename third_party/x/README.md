@@ -41,6 +41,8 @@ Write tools and user-context tools (bookmarks, Articles, resolving the current u
 
 ## Setup
 
+No credential ships with this plugin — it carries only a `${X_BEARER_TOKEN}` placeholder, and each install supplies its own token.
+
 1. Create an app in the [X Developer Portal](https://developer.x.com).
 2. Open the app's **Keys and tokens** page and copy the **Bearer Token** (the app-only token).
 3. In **Dashboard → Plugins → Configure**, set **X app-only Bearer token** to that value.
