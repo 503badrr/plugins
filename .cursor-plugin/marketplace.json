@@ -114,6 +114,11 @@
       "description": "Connect Cursor to Apollo.io — prospect search, contact and company enrichment, lists, sequences, and one-off emails — via Apollo's official remote MCP server."
     },
     {
+      "name": "ashby",
+      "source": "third_party/ashby",
+      "description": "Connect Cursor to Ashby — search candidates and jobs, prep for interviews, manage pipeline tasks, and take recruiting actions — via Ashby's official remote MCP server."
+    },
+    {
       "name": "zoom",
       "source": "third_party/zoom",
       "description": "Zoom MCP integration — search meetings and recordings, pull summaries and transcripts, and work with Zoom Docs."
