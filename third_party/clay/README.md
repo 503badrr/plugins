@@ -1,40 +1,59 @@
 # Clay
 
-Connect Cursor to [Clay](https://www.clay.com) via Clay's hosted MCP server. Find and enrich people and companies across 150+ data providers, run AI research agents, and trigger your team's approved Clay workflows — directly from Cursor.
+Cursor plugin that connects agents to [Clay](https://www.clay.com) through Clay's official hosted [Model Context Protocol](https://modelcontextprotocol.io/) server.
 
-## What you can do
+Find and enrich people and companies across 150+ data providers, run AI research agents (Claygent), and trigger your team's approved Clay workflows from the signed-in Clay workspace.
 
-- **Find people and companies** — search Clay's data universe with natural-language criteria.
-- **Enrich records** — pull emails, phone numbers, firmographics, technographics, and more across 150+ providers.
-- **Run AI research agents** — Claygent answers open-ended research questions about accounts and contacts.
-- **Trigger workflows** — kick off Clay tables and workflows your team has approved for MCP access.
+## Install
 
-## Installation
+1. Open **Cursor Settings → Plugins**.
+2. Search for **Clay**.
+3. Click **Install**, then complete the Clay sign-in prompt.
 
-1. Install this plugin from the Cursor marketplace.
-2. When Cursor connects to the Clay MCP server for the first time, your browser opens to sign in at `app.clay.com`.
-3. Approve the connection. That's it — no API keys or client IDs to copy.
+Or run `/add-plugin clay` in chat.
 
-Clay's MCP server supports OAuth 2.1 with Dynamic Client Registration (DCR), so Cursor registers itself automatically and completes the standard PKCE authorization flow.
+## MCP
 
-## Requirements
+```json
+{
+  "mcpServers": {
+    "clay": {
+      "type": "http",
+      "url": "https://api.clay.com/v3/mcp"
+    }
+  }
+}
+```
 
-- A Clay account with access to a workspace.
-- Your Clay workspace admin may need to allow MCP client connections (Clay workspace Settings → MCP). If sign-in succeeds but tools fail, check with your admin.
+Auth is OAuth 2.1 against Clay with Dynamic Client Registration (DCR) and PKCE. Cursor registers itself and prompts for Clay sign-in when the plugin connects — there is no API key or client ID to configure.
 
-## MCP server
+## Before you connect
 
-| Server | URL | Auth |
-| ------ | --- | ---- |
-| `clay` | `https://api.clay.com/v3/mcp` | OAuth 2.1 (DCR + PKCE), handled automatically by Cursor |
+You need a Clay account with access to a workspace.
 
-## For workspace admins
+Your Clay workspace admin may need to allow MCP client connections under Clay workspace **Settings → MCP**. If sign-in succeeds but tools fail, check with your admin.
 
-- Connections made through this plugin appear in your Clay workspace's MCP client list, labeled with the Cursor client name.
-- Access is scoped to what the signed-in Clay user can do; workflow triggers are limited to workflows approved for MCP access.
-- To revoke access, remove the client from your workspace's MCP settings in Clay.
+## What agents can do
 
-## Support
+| Category | Capabilities |
+| --- | --- |
+| People & companies | Search Clay's data universe with natural-language criteria |
+| Enrichment | Pull emails, phone numbers, firmographics, technographics, and other data points across 150+ providers |
+| Research | Ask Claygent open-ended questions about accounts and contacts |
+| Workflows | Trigger Clay tables and workflows your team has approved for MCP access |
 
-- Clay MCP docs: <https://university.clay.com/docs/connect-to-clay-mcp>
-- Issues with this plugin: <https://github.com/cursor/plugins/issues>
+## Notes
+
+- Tool calls run as the Clay user who authorizes the connection and cannot exceed that user's permissions.
+- Workflow triggers are limited to workflows approved for MCP access in the Clay workspace.
+- Connections appear in your Clay workspace's MCP client list, labeled with the Cursor client name.
+- Revoke access at any time from Clay workspace **Settings → MCP**.
+
+## Docs
+
+- Connect to Clay MCP: https://university.clay.com/docs/connect-to-clay-mcp
+- Server URL: https://api.clay.com/v3/mcp
+
+## License
+
+MIT
