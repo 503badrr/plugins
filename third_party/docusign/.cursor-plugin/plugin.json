@@ -29,11 +29,6 @@
   "variables": {
     "type": "object",
     "properties": {
-      "DOCUSIGN_MCP_URL": {
-        "type": "string",
-        "title": "Docusign MCP server URL",
-        "description": "Demo (developer accounts): https://mcp-d.docusign.com/mcp — Production: https://mcp.docusign.com/mcp"
-      },
       "CLIENT_ID": {
         "type": "string",
         "title": "Docusign Integration Key",
@@ -46,7 +41,6 @@
       }
     },
     "required": [
-      "DOCUSIGN_MCP_URL",
       "CLIENT_ID",
       "CLIENT_SECRET"
     ]

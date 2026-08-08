@@ -8,7 +8,7 @@ Work with eSignature envelopes and templates, Maestro workflows, and Navigator a
 
 1. Open **Cursor Settings → Plugins**.
 2. Search for **Docusign**.
-3. Click **Install**, then set the MCP URL, Integration Key, and Secret Key (below) and complete the Docusign sign-in prompt.
+3. Click **Install**, then set the Integration Key and Secret Key (below) and complete the Docusign sign-in prompt.
 
 Or run `/add-plugin docusign` in chat.
 
@@ -19,7 +19,7 @@ Or run `/add-plugin docusign` in chat.
   "mcpServers": {
     "docusign": {
       "type": "http",
-      "url": "${DOCUSIGN_MCP_URL}",
+      "url": "https://mcp.docusign.com/mcp",
       "auth": {
         "CLIENT_ID": "${CLIENT_ID}",
         "CLIENT_SECRET": "${CLIENT_SECRET}"
@@ -33,28 +33,29 @@ Or run `/add-plugin docusign` in chat.
 
 Docusign MCP requires a confidential OAuth app (Authorization Code Grant). Create an Integration Key before anyone can connect.
 
-1. Sign in to your [Docusign developer account](https://developers.docusign.com/) (or production admin account) and open **Settings → Apps and Keys**.
+1. Sign in to your [Docusign account](https://www.docusign.com/) (or [developer account](https://developers.docusign.com/)) and open **Settings → Apps and Keys**.
 2. Add an app, copy the **Integration Key**, and generate a **Secret Key**.
 3. Register both redirect URIs on that app:
    - Desktop: `http://localhost:8787/callback`
    - Web and Cloud Agents: `https://www.cursor.com/agents/mcp/oauth/callback`
-4. In **Dashboard → Plugins → Configure**, set:
-   - **Docusign MCP server URL** — demo or production (table below)
-   - **Docusign Integration Key** and **Docusign Secret Key** from that app
+4. In **Dashboard → Plugins → Configure**, set **Docusign Integration Key** and **Docusign Secret Key** from that app.
 5. Complete the Docusign OAuth login when Cursor prompts.
+
+On a team marketplace an admin can set the credentials once for everyone; each member still completes their own Docusign OAuth login, so tool calls run with that member's permissions.
+
+## Demo vs production
+
+This plugin points at the production MCP URL. For developer/demo accounts, change the `url` in `mcp.json` to `https://mcp-d.docusign.com/mcp` after install.
 
 | Environment | URL |
 | --- | --- |
+| Production (default) | `https://mcp.docusign.com/mcp` |
 | Demo (developer accounts) | `https://mcp-d.docusign.com/mcp` |
-| Production | `https://mcp.docusign.com/mcp` |
-
-On a team marketplace an admin can set the URL and credentials once for everyone; each member still completes their own Docusign OAuth login, so tool calls run with that member's permissions.
 
 ## Notes
 
 - The MCP server is in beta. Expect changes as Docusign adds tools and refines the surface.
 - Only **Confidential Authorization Code Grant** tokens are supported — not JWT, Implicit, or Public Authorization Code Grant.
-- Match the MCP URL to the account type: use the demo URL with developer/demo accounts and the production URL with production accounts.
 
 ## Docs
 
