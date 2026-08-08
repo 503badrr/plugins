@@ -25,6 +25,7 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `apollo-io` | [Apollo.io](third_party/apollo-io/) | Cursor | Integrations | Connect Cursor to Apollo.io — prospect search, contact and company enrichment, lists, sequences, and one-off emails — via Apollo's official remote MCP server. |
 | `ashby` | [Ashby](third_party/ashby/) | Cursor | Integrations | Connect Cursor to Ashby — search candidates and jobs, prep for interviews, manage pipeline tasks, and take recruiting actions — via Ashby's official remote MCP server. |
 | `hubspot` | [HubSpot](third_party/hubspot/) | Cursor | Integrations | Connect Cursor to HubSpot CRM — search and update contacts, companies, deals, and tickets; work with activities, conversations, and marketing emails — via HubSpot's official remote MCP server. |
+| `intercom` | [Intercom](third_party/intercom/) | Cursor | Integrations | Connect Cursor to Intercom — search conversations and contacts, look up companies, and manage Help Center articles — via Intercom's official remote MCP server. |
 | `x` | [X](third_party/x/) | Cursor | Integrations | Read-only access to the X API — search posts and users, read timelines and mentions, and pull trends and news — via X's official hosted MCP server. |
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 
