@@ -123,6 +123,12 @@
       "source": "third_party/hubspot",
       "description": "Connect Cursor to HubSpot CRM — search and update contacts, companies, deals, and tickets; work with activities, conversations, and marketing emails — via HubSpot's official remote MCP server."
     },
+    {
+      "name": "intercom",
+      "source": "third_party/intercom",
+      "description": "Connect Cursor to Intercom — search conversations and contacts, look up companies, and manage Help Center articles — via Intercom's official remote MCP server."
+    },
+
 
     {
       "name": "zoom",
