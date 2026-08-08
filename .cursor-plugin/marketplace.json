@@ -144,6 +144,12 @@
       "name": "clay",
       "source": "third_party/clay",
       "description": "Connect Cursor to Clay — find and enrich people and companies across 150+ data providers, run AI research agents, and trigger your team's approved Clay workflows — via Clay's official hosted MCP server."
+    },
+    {
+      "name": "circleback",
+      "source": "third_party/circleback",
+      "description": "Connect Cursor to Circleback — search meetings, transcripts, action items, calendar events, and emails, and look up people and companies — via Circleback's official remote MCP server."
     }
   ]
 }
+

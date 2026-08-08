@@ -26,6 +26,7 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `ashby` | [Ashby](third_party/ashby/) | Cursor | Integrations | Connect Cursor to Ashby — search candidates and jobs, prep for interviews, manage pipeline tasks, and take recruiting actions — via Ashby's official remote MCP server. |
 | `hubspot` | [HubSpot](third_party/hubspot/) | Cursor | Integrations | Connect Cursor to HubSpot CRM — search and update contacts, companies, deals, and tickets; work with activities, conversations, and marketing emails — via HubSpot's official remote MCP server. |
 | `intercom` | [Intercom](third_party/intercom/) | Cursor | Integrations | Connect Cursor to Intercom — search conversations and contacts, look up companies, and manage Help Center articles — via Intercom's official remote MCP server. |
+| `circleback` | [Circleback](third_party/circleback/) | Cursor | Integrations | Connect Cursor to Circleback — search meetings, transcripts, action items, calendar events, and emails, and look up people and companies — via Circleback's official remote MCP server. |
 | `x` | [X](third_party/x/) | Cursor | Integrations | Read-only access to the X API — search posts and users, read timelines and mentions, and pull trends and news — via X's official hosted MCP server. |
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 
