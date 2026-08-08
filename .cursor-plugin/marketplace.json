@@ -149,7 +149,13 @@
       "name": "circleback",
       "source": "third_party/circleback",
       "description": "Connect Cursor to Circleback — search meetings, transcripts, action items, calendar events, and emails, and look up people and companies — via Circleback's official remote MCP server."
+    },
+    {
+      "name": "docusign",
+      "source": "third_party/docusign",
+      "description": "Connect Cursor to Docusign — work with eSignature envelopes and templates, Maestro workflows, and Navigator agreements — via Docusign's official remote MCP server (beta)."
     }
   ]
 }
+
 
