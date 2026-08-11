@@ -29,6 +29,7 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `circleback` | [Circleback](third_party/circleback/) | Cursor | Integrations | Connect Cursor to Circleback — search meetings, transcripts, action items, calendar events, and emails, and look up people and companies — via Circleback's official remote MCP server. |
 | `docusign` | [Docusign](third_party/docusign/) | Cursor | Integrations | Connect Cursor to Docusign — work with eSignature envelopes and templates, Maestro workflows, and Navigator agreements — via Docusign's official remote MCP server (beta). |
 | `x` | [X](third_party/x/) | Cursor | Integrations | Read-only access to the X API — search posts and users, read timelines and mentions, and pull trends and news — via X's official hosted MCP server. |
+| `navan` | [Navan](third_party/navan/) | Cursor | Integrations | Connect Cursor to Navan — query expenses, analyze travel bookings, check policies and approvals, and manage cards — via Navan's official remote MCP server. |
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 
 ## Repository structure
