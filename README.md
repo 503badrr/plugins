@@ -30,7 +30,6 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `docusign` | [Docusign](third_party/docusign/) | Cursor | Integrations | Connect to Docusign — work with eSignature envelopes and templates, Maestro workflows, and Navigator agreements — via Docusign's official remote MCP server (beta). |
 | `x` | [X](third_party/x/) | Cursor | Integrations | Read-only access to the X API — search posts and users, read timelines and mentions, and pull trends and news — via X's official hosted MCP server. |
 | `navan` | [Navan](third_party/navan/) | Cursor | Integrations | Connect to Navan — query expenses, analyze travel bookings, check policies and approvals, and manage cards — via Navan's official remote MCP server. |
-| `agentmail` | [AgentMail](third_party/agentmail/) | Cursor | Integrations | Connect to AgentMail — create inboxes, send and receive email, search threads, and manage drafts and attachments — via AgentMail's official hosted MCP server. |
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 
 ## Repository structure
