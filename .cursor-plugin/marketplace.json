@@ -159,6 +159,11 @@
       "name": "navan",
       "source": "third_party/navan",
       "description": "Connect to Navan — query expenses, analyze travel bookings, check policies and approvals, and manage cards — via Navan's official remote MCP server."
+    },
+    {
+      "name": "agentmail",
+      "source": "third_party/agentmail",
+      "description": "Connect to AgentMail — create inboxes, send and receive email, search threads, and manage drafts and attachments — via AgentMail's official hosted MCP server."
     }
   ]
 }
