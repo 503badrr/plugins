@@ -31,6 +31,7 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `x` | [X](third_party/x/) | Cursor | Integrations | Read-only access to the X API — search posts and users, read timelines and mentions, and pull trends and news — via X's official hosted MCP server. |
 | `navan` | [Navan](third_party/navan/) | Cursor | Integrations | Connect to Navan — query expenses, analyze travel bookings, check policies and approvals, and manage cards — via Navan's official remote MCP server. |
 | `profound` | [Profound](third_party/profound/) | Cursor | Integrations | Connect to Profound — retrieve AI visibility, sentiment, and citation reports, access agent analytics, and build or run Profound Agents — via Profound's official hosted MCP server. |
+| `juicebox` | [Juicebox](third_party/juicebox/) | Cursor | Integrations | Connect to Juicebox — query recruiting analytics, search shortlists, look up projects, and create or manage sourcing agents — via Juicebox's official remote MCP server. |
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 
 ## Repository structure
