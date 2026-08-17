@@ -164,6 +164,11 @@
       "name": "profound",
       "source": "third_party/profound",
       "description": "Connect to Profound — retrieve AI visibility, sentiment, and citation reports, access agent analytics, and build or run Profound Agents — via Profound's official hosted MCP server."
+    },
+    {
+      "name": "juicebox",
+      "source": "third_party/juicebox",
+      "description": "Connect to Juicebox — query recruiting analytics, search shortlists, look up projects, and create or manage sourcing agents — via Juicebox's official remote MCP server."
     }
   ]
 }
