@@ -5,7 +5,7 @@
   "minClientVersions": {
     "cursor": "3.13.0"
   },
-  "description": "Work across Drive, Docs, Sheets, and Slides.",
+  "description": "Search, read, create, and share files.",
   "author": {
     "name": "Cursor",
     "email": "plugins@cursor.com"

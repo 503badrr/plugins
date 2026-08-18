@@ -81,7 +81,7 @@
     {
       "name": "google-drive",
       "source": "third_party/google-drive",
-      "description": "Work across Drive, Docs, Sheets, and Slides."
+      "description": "Search, read, create, and share files."
     },
     {
       "name": "google-calendar",
