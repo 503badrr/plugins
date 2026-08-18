@@ -5,7 +5,7 @@
   "minClientVersions": {
     "cursor": "3.13.0"
   },
-  "description": "Connect to Apollo.io — prospect search, contact and company enrichment, lists, sequences, and one-off emails — via Apollo's official remote MCP server.",
+  "description": "Search prospects, enrich contacts, and run sequences.",
   "author": {
     "name": "Cursor",
     "email": "plugins@cursor.com"
