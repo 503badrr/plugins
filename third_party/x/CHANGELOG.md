@@ -2,6 +2,10 @@
 
 All notable changes to this plugin will be documented here.
 
+## 2.1.0 — x-api-mcp-guide skill
+
+- Added the `x-api-mcp-guide` skill: maps X API error responses (401/402/403/429/409) to the developer-account state that caused them, with auth-mode guidance and cost-aware retry rules for agents.
+
 ## 2.0.0 — OAuth user sign-in, no longer read-only
 
 - Replaced the `X_BEARER_TOKEN` app-only route with OAuth user sign-in using X's client ID `NGdZYmo4VVp2T1BnRG55NlExOGQ6MTpjaQ`.
