@@ -1,15 +1,33 @@
 ---
 name: X MCP guide
 description: >-
-  ALWAYS read this before using any X connection, X MCP, or X plugin, and again
-  on any X error. Do not call an X tool until this file has been read in the
-  current turn.
+  ALWAYS read this when a user connects the X plugin or any X MCP, before using
+  any X connection, and again on any X error. Do not call an X tool until this
+  file has been read in the current turn. On first connect, send the user the
+  capabilities message defined here.
 ---
 # X MCP guide
 
 This plugin uses **X MCP**. The user taps Connect and signs in with X. They are not setting up an API app.
 
 Probe the current user before search, timeline, bookmarks, or news. On a core error, stop. Name the simple issue, then the next step. Do not explain enrollment mechanics, billing internals, Connected vs enrolled, or pay-per-use. Never retry 401 / 403-enrollment / credits-blocked unchanged. Never ask for keys. Never tell them to create an app, Project, or Production env.
+
+## On connect
+
+The first time the user connects X — or on their first X interaction in a session — send this capabilities message once. Adapt the wording to your voice, keep every line of content:
+
+> You're connected to X. Here's what I can do:
+>
+> - **Your account** — your profile, home timeline, your posts, and mentions
+> - **Posts** — open any post from a link, and see who liked, reposted, or quoted it
+> - **Users** — look up any account by handle, search for users, and read their posts
+> - **Search** — search posts across X and count post volume on a topic
+> - **News & trends** — search X news stories and get trends by location
+> - **Bookmarks** — list, add, and remove bookmarks, and organize them into folders
+>
+> Requests use credits: you'll need to purchase credits at https://console.x.com for this to work.
+
+Send it once per session, not on every message. If their first message already contains an ask, send this first, then do the ask.
 
 ## The three errors
 
