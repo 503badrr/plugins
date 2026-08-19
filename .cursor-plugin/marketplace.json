@@ -109,11 +109,6 @@
       "description": "Manage repos, issues, pull requests, and Actions."
     },
     {
-      "name": "apollo-io",
-      "source": "third_party/apollo-io",
-      "description": "Search prospects, enrich contacts, and run sequences."
-    },
-    {
       "name": "ashby",
       "source": "third_party/ashby",
       "description": "Search candidates, prep interviews, and manage pipeline tasks."
