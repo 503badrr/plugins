@@ -167,6 +167,11 @@
       "name": "outreach",
       "source": "third_party/outreach",
       "description": "Search sequences, prospects, and Kaia meetings."
+    },
+    {
+      "name": "amplemarket",
+      "source": "third_party/amplemarket",
+      "description": "Search people and companies, enrich leads, run sequences."
     }
   ]
 }
