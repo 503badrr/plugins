@@ -1,91 +1,146 @@
 ---
-name: x-api-mcp-guide
-description: Always read this before the first call through the X MCP or plugin in a session
+name: X MCP guide
+description: >-
+  ALWAYS read this before using any X connection, X MCP, or X plugin, and again
+  on any X error. Do not call an X tool until this file has been read in the
+  current turn.
 ---
+# X MCP guide
 
-# X API / X MCP guide
+This plugin uses **X MCP**. The user taps Connect and signs in with X. They are not setting up an API app.
 
-The X API bills per request from a prepaid credit balance, so blind
-retries cost real money and the errors below are the normal way the API tells
-you which account precondition is missing.
+Probe the current user before search, timeline, bookmarks, or news. On a core error, stop. Name the simple issue, then the next step. Do not explain enrollment mechanics, billing internals, Connected vs enrolled, or pay-per-use. Never retry 401 / 403-enrollment / credits-blocked unchanged. Never ask for keys. Never tell them to create an app, Project, or Production env.
 
-## The four preconditions
+## The three errors
 
-Every successful call requires ALL of these at once. Each missing one maps to
-a distinct error:
+Match `type`, `reason`, `title`, `detail`. Then say the quoted line. Nothing else.
 
-1. **Developer account** exists (signed up at console.x.com, agreement accepted).
-2. **App is attached to a Project** — a standalone app fails even with valid keys.
-3. **Valid credentials** of the right kind for the endpoint (see Auth modes).
-4. **Positive credit balance** — pay-per-use, no free tier. Balance can go
-   slightly negative; requests stay blocked until the shortfall is covered.
+### 1. Sign-in failed
 
-## Error decode table
+**When:** X tools unavailable; connect prompt; 401; Unauthorized; login loop; token refresh failed.
 
-Match top-down; the first row that fits is usually the real cause.
+**Say:**
 
-| HTTP | Error type / reason | Account state | Fix |
-| --- | --- | --- | --- |
-| 401 | `about:blank`, bare `"detail": "Unauthorized"` | No developer account, wrong/regenerated/revoked keys, or a suspended app. Deliberately vague. | Verify credential freshness and type; check app status in the Developer Console. |
-| 403 | `client-forbidden` / `"reason": "client-not-enrolled"` | Enrolled, but the app is not attached to a Project (or was silently detached — a known recurring bug). | Developer Console → app settings → attach to a Project ("Move to package" if no Project UI). |
-| 403 | `not-authorized-for-resource` or plain Forbidden | Wrong auth mode: app-only Bearer Token on a write endpoint, missing OAuth scope, or private/protected resource. | Use a user-context token with the needed scopes. |
-| 402 | Payment Required (NOT in the official status table) | Enrolled but credit balance is zero or negative. Message: "Your enrolled account [id] does not have any credits to fulfill this request." | Buy credits in the console. Do not retry until topped up. |
-| 429 | `rate-limit-exceeded` | Per-endpoint rate limit hit (15-min or 24-h window, per app or per user token). | Wait until the `x-rate-limit-reset` Unix timestamp; back off exponentially. |
-| 429 | `usage-capped` | Monthly cap hit (3M post reads) or spending limit for the billing cycle reached. | Wait for cycle reset, raise the spending limit, or Enterprise. |
-| 409 | `streaming-connection` conflict | Filtered stream has no rules defined. | Add at least one stream rule before connecting. |
-| 400 | `invalid-request` | Malformed request, not an account problem. | Fix params/JSON. Never retry unchanged. |
-| 5xx | — | X-side outage, not your account. | Retry with backoff; check developer.x.com/status. |
+> You're not signed in to X. Reconnect the X plugin in this chat. Don't paste keys or passwords. Then I'll retry.
 
-A 200 can still contain a partial `errors` array next to `data` (multi-resource
-lookups where some resources are gone/protected). Always check for it.
+Trigger reconnect if you can. Probe once after. If it still 401s, stop.
 
-## Auth modes
+### 2. Not onboarded (403)
 
-- **Bearer Token (app-only)**: public reads only. Writing with it returns 403
-  even on a fully funded account.
-- **OAuth 2.0 user context / OAuth 1.0a**: required for posting, likes,
-  follows, DMs. OAuth 2.0 user tokens expire in ~2 hours — implement refresh.
-- Credentials are shown once at creation; regenerating invalidates old keys
-  (that shows up as the bare 401 above).
+**When:** `client-forbidden`; `user-not-enrolled`; `client-not-enrolled`; Client Forbidden; 403 on timeline / mentions / search / bookmarks after Connect.
 
-## Cost-aware behavior for agents
+**Say:**
 
-- Errors are free (only successful data-returning responses are billed), but
-  successes cost real credits: ~$0.005/post read, $0.015/post create,
-  $0.200/post containing a URL. Do not loop reads speculatively.
-- Identical resources are deduplicated within a 24-hour UTC day (soft
-  guarantee) — re-reading the same post the same day is free-ish; the next
-  day it bills again.
-- On 402, stop and tell the user to add credits; auto-recharge fires at most
-  once per 5 minutes and pauses entirely at zero/negative balance, so bursts
-  can 402 even with auto-recharge on.
-- Retry policy: backoff-retry only 429 and 5xx. Never retry 400/401/402/403
-  without changing something.
+> This X account isn't set up yet. Go to https://console.x.com, register and onboard with this same X account, then come back and I'll retry.
 
-## Reference payloads
+Do not retry. Do not search. Do not mention apps, projects, or pay-per-use. If they already did that, ask them to reconnect, probe once, and if it still 403s say the same line again.
 
-Not enrolled / app not in a Project (403):
+### 3. Out of credits
 
-```json
-{
-  "title": "Client Forbidden",
-  "reason": "client-not-enrolled",
-  "required_enrollment": "Appropriate Level of API Access",
-  "detail": "When authenticating requests to the Twitter API v2 endpoints, you must use keys and tokens from a Twitter developer App that is attached to a Project. ...",
-  "registration_url": "https://developer.twitter.com/en/portal/opt-in",
-  "type": "https://api.twitter.com/2/problems/client-forbidden"
-}
-```
+**When:** no credits; balance zero or negative; “does not have any credits”; requests blocked until credits are added.
 
-Out of credits (402, wording from live API; absent from official docs):
+**Say:**
+
+> You're out of credits. Go to https://console.x.com and add credits, then I'll retry.
+
+Stop. Do not retry.
+
+If the payload is only `usage-capped` (no enrollment reason):
+
+> You hit a limit. Try again later.
+
+If `user-not-enrolled` or `client-not-enrolled` is present, that is #2, not this.
+
+## Other errors
+
+`not-authorized-for-resource` (private account they don't own): stop. Their own timeline/bookmarks: probe current user, retry once with that id.
+
+> I can't open that. If it's yours, reconnect X. If it's someone else's private account, I don't have access.
+
+`resource-not-found`: resolve the id, retry **once**. Never retry the same id.
+
+> Paste a handle, profile link, or post link.
+
+
+| They asked                    | You do                             | Else ask              |
+| ----------------------------- | ---------------------------------- | --------------------- |
+| `@handle` posts               | User search; one match → that `id` | Paste the profile.    |
+| A post                        | Parse `/status/{id}`               | Paste the post link.  |
+| Bookmarks, timeline, mentions | Current user → that `id`           | Reconnect X.          |
+| Bookmark folder               | List folders on `{me}`             | Which folder?         |
+| News                          | News search                        | What topic?           |
+| Search                        | Rewrite query                      | What should I search? |
+
+
+429 `rate-limit-exceeded`: wait for `x-rate-limit-reset`, smaller page, retry once.
+
+> I'll retry in a minute.
+
+400 `invalid-request`: fix params, don't retry unchanged.
+
+5xx: backoff. Check [https://developer.x.com/status](https://developer.x.com/status) if it keeps failing.
+
+200 + `errors[]`: use `data`, skip listed ids.
+
+## Session start
+
+Resolve the current user (`user.fields=id,name,username,description,public_metrics`).
+
+
+| Result           | Next                                                                                 |
+| ---------------- | ------------------------------------------------------------------------------------ |
+| Success          | Cache `id` as `{me}`. Do their ask. Prefer `{me}` for timeline, mentions, bookmarks. |
+| Error 1, 2, or 3 | Stop. Say that error's line. Do not search.                                          |
+| 200 + `errors[]` | Keep `data`.                                                                         |
+
+
+
+
+## Fields, pagination, cost
+
+Request fields. If the tool takes `tweet.fields` or `post.fields`, send `created_at,public_metrics,author_id,lang,conversation_id`. Also `user.fields=created_at,description,public_metrics,verified,location` and `expansions=author_id,referenced_tweets.id`.
+
+`meta.next_token` → `pagination_token`. Stop when `next_token` is omitted.
+
+Reads bill per resource. Prefer recent counts, then `{me}` reads, then a small full-archive page. Recent window is 7 days.
+
+## Search operators
 
 ```text
-Your enrolled account [1146115155501039616] does not have any credits to fulfill this request.
+from:handle
+to:handle
+@handle
+#tag
+"exact phrase"
+url:example.com
+lang:en
+-is:retweet
+-is:reply
+is:verified
+has:images
+has:video_link
+has:links
+conversation_id:ID
 ```
 
-Every response carries `x-rate-limit-limit`, `x-rate-limit-remaining`, and
-`x-rate-limit-reset` headers; rate limits are separate from billing.
+Spaces = AND. Recent query max 512 characters; full-archive 1,024. Use `min_likes:` / `min_reposts:`, not `min_faves:` / `min_retweets:`.
 
-Full docs: append `.md` to any docs.x.com URL for clean markdown, e.g.
-`https://docs.x.com/x-api/fundamentals/response-codes-and-errors.md` and
-`https://docs.x.com/x-api/getting-started/pricing.md`.
+## Workflows
+
+Current user first. Stop on errors 1–3.
+
+- Home / mentions / my posts: `{me}`, modest `max_results`. Paginate only if asked.
+- Handle: username → posts. Else user search, then ask.
+- Topic: recent counts → small search page → stop.
+- Bookmarks: list `{me}`. Save: parse status id, create bookmark.
+- One post: parse status id, lookup.
+
+
+
+## Don't
+
+- Explain deep details (pay-per-use, Connected vs enrolled, billing internals). Do name the simple issue.
+- Say pay-per-use, Project, Production, or "create an app".
+- Ask for secrets.
+- Retry 403 or credits-blocked in a loop.
+

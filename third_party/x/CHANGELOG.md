@@ -2,9 +2,9 @@
 
 All notable changes to this plugin will be documented here.
 
-## 2.1.0 — x-api-mcp-guide skill
+## 2.1.0 — X MCP guide skill
 
-- Added the `x-api-mcp-guide` skill: maps X API error responses (401/402/403/429/409) to the developer-account state that caused them, with auth-mode guidance and cost-aware retry rules for agents.
+- Added the X MCP guide skill: tells agents how to handle sign-in, onboarding, and out-of-credits errors with simple user-facing messages, plus session-start, search, pagination, and cost-aware workflow rules.
 
 ## 2.0.0 — OAuth user sign-in, no longer read-only
 
