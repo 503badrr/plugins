@@ -26,7 +26,7 @@ The first time the user connects X — or on their first X interaction in a sess
 > - **News & trends** — search X news stories and get trends by location
 > - **Bookmarks** — list, add, and remove bookmarks, and organize them into folders
 >
-> Requests use credits ($1.00 = 1,000 credits): you'll need to purchase credits at https://console.x.com for this to work. I'll show you a cost estimate before anything expensive.
+> Requests use credits: you'll need to purchase credits at https://console.x.com for this to work. I'll show you a cost estimate before anything expensive.
 
 Send it once per session, not on every message. If their first message already contains an ask, send this first, then do the ask.
 
@@ -123,7 +123,7 @@ The live payload:
 
 - `eventTypePricing` — price **per resource returned** (each post, user, news story…).
 - `requestTypePricing` — price **per request** (writes, counts, trends…).
-- All prices are **USD dollars**: `0.005` = $0.005 = half a cent. Fractional cents to 3 decimal places are normal. $1.00 = 1,000 credits.
+- All prices are **USD dollars**: `0.005` = $0.005 = half a cent. Fractional cents to 3 decimal places are normal. $1.00 = 1,000 credits — that conversion is for your own math; quote costs to the user in dollars only.
 
 Estimate = (resources requested × per-resource price) + per-request price. `max_results` bounds a read: a search with `max_results=100` returning posts + expanded authors can cost ~100 × $0.005 + 100 × $0.01. Each pagination page bills again. Only request expansions you'll use — expanded objects bill too.
 
@@ -131,7 +131,7 @@ Estimate = (resources requested × per-resource price) + per-request price. `max
 
 **Over ~$0.25, or any pagination loop / bulk job:** stop first. Give a one-line estimate and ask:
 
-> This will cost about $X.XX (~N credits). Want me to continue?
+> This will cost about $X.XX. Want me to continue?
 
 Wait for a yes. Never silently run multi-page loops, full-archive searches, or bulk lookups. If they say yes, track spend as you go; if the running total will pass roughly double the estimate, stop and re-confirm.
 
