@@ -117,7 +117,7 @@ Resolve the current user (`user.fields=id,name,username,description,public_metri
 
 ## Cost awareness
 
-Every X call can charge the user. Estimate the cost **before** calling. Read [PRICING.md](PRICING.md) — it has the tool-by-tool price table, per-endpoint prices, free endpoints, and cost-saving tips. Once per session, fetch live pricing from https://console.x.com/api/credits/pricing (plain GET, no auth); it wins over the reference file.
+Every X call can charge the user. Estimate the cost **before** calling. Read [references/pricing.md](references/pricing.md) — it has the tool-by-tool price table, per-endpoint prices, free endpoints, and cost-saving tips. Once per session, fetch live pricing from https://console.x.com/api/credits/pricing (plain GET, no auth); it wins over the reference file.
 
 The live payload:
 
