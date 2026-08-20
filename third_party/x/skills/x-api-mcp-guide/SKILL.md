@@ -4,7 +4,8 @@ description: >-
   ALWAYS read this when a user connects the X plugin or any X MCP, before using
   any X connection, and again on any X error. Do not call an X tool until this
   file has been read in the current turn. On first connect, send the user the
-  capabilities message defined here.
+  capabilities message defined here. Estimate the cost of every X call before
+  making it and confirm with the user before anything expensive.
 ---
 # X MCP guide
 
@@ -25,7 +26,7 @@ The first time the user connects X — or on their first X interaction in a sess
 > - **News & trends** — search X news stories and get trends by location
 > - **Bookmarks** — list, add, and remove bookmarks, and organize them into folders
 >
-> Requests use credits: you'll need to purchase credits at https://console.x.com for this to work.
+> Requests use credits ($1.00 = 1,000 credits): you'll need to purchase credits at https://console.x.com for this to work. I'll show you a cost estimate before anything expensive.
 
 Send it once per session, not on every message. If their first message already contains an ask, send this first, then do the ask.
 
@@ -114,7 +115,38 @@ Resolve the current user (`user.fields=id,name,username,description,public_metri
 
 
 
-## Fields, pagination, cost
+## Cost awareness
+
+Every X call charges the user. Estimate the cost **before** calling. Once per session, fetch live pricing from https://console.x.com/api/credits/pricing (plain GET, no auth). Full billing docs: https://docs.x.com/x-api/getting-started/pricing.
+
+The payload:
+
+- `eventTypePricing` — price **per resource returned** (each post, user, news story…).
+- `requestTypePricing` — price **per request** (writes, counts, trends…).
+- All prices are **USD dollars**: `0.005` = $0.005 = half a cent. Fractional cents to 3 decimal places are normal. $1.00 = 1,000 credits.
+
+If the fetch fails, use these reference prices (may drift; live endpoint wins):
+
+| What | Price |
+| --- | --- |
+| Post, News story, List, Space returned | $0.005 each |
+| User returned | $0.01 each |
+| Own timeline/bookmarks read (`OwnedRead`) | $0.001 per post |
+| Like / Block / Mute returned | $0.001 each |
+| Counts (recent), Bookmark write | $0.005 per request |
+| Counts (full-archive), Trends | $0.01 per request |
+
+Estimate = (resources requested × per-resource price) + per-request price. `max_results` bounds a read: a search with `max_results=100` returning posts + expanded authors can cost ~100 × $0.005 + 100 × $0.01. Each pagination page bills again.
+
+**Under ~$0.25:** just do it — don't nag about pennies. Keep `max_results` small (10–25) unless they asked for more.
+
+**Over ~$0.25, or any pagination loop / bulk job:** stop first. Give a one-line estimate and ask:
+
+> This will cost about $X.XX (~N credits). Want me to continue?
+
+Wait for a yes. Never silently run multi-page loops, full-archive searches, or bulk lookups. If they say yes, track spend as you go; if the running total will pass roughly double the estimate, stop and re-confirm.
+
+## Fields, pagination
 
 Request fields. If the tool takes `tweet.fields` or `post.fields`, send `created_at,public_metrics,author_id,lang,conversation_id`. Also `user.fields=created_at,description,public_metrics,verified,location` and `expansions=author_id,referenced_tweets.id`.
 
@@ -161,4 +193,5 @@ Current user first. Stop on errors 1–3.
 - Say pay-per-use, Project, Production, or "create an app".
 - Ask for secrets.
 - Retry 403 or credits-blocked in a loop.
+- Run an expensive request (over ~$0.25, pagination loops, bulk lookups) without giving an estimate and getting a yes.
 
