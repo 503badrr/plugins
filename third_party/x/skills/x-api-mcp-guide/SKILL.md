@@ -117,26 +117,15 @@ Resolve the current user (`user.fields=id,name,username,description,public_metri
 
 ## Cost awareness
 
-Every X call charges the user. Estimate the cost **before** calling. Once per session, fetch live pricing from https://console.x.com/api/credits/pricing (plain GET, no auth). Full billing docs: https://docs.x.com/x-api/getting-started/pricing.
+Every X call can charge the user. Estimate the cost **before** calling. Read [PRICING.md](PRICING.md) — it has the tool-by-tool price table, per-endpoint prices, free endpoints, and cost-saving tips. Once per session, fetch live pricing from https://console.x.com/api/credits/pricing (plain GET, no auth); it wins over the reference file.
 
-The payload:
+The live payload:
 
 - `eventTypePricing` — price **per resource returned** (each post, user, news story…).
 - `requestTypePricing` — price **per request** (writes, counts, trends…).
 - All prices are **USD dollars**: `0.005` = $0.005 = half a cent. Fractional cents to 3 decimal places are normal. $1.00 = 1,000 credits.
 
-If the fetch fails, use these reference prices (may drift; live endpoint wins):
-
-| What | Price |
-| --- | --- |
-| Post, News story, List, Space returned | $0.005 each |
-| User returned | $0.01 each |
-| Own timeline/bookmarks read (`OwnedRead`) | $0.001 per post |
-| Like / Block / Mute returned | $0.001 each |
-| Counts (recent), Bookmark write | $0.005 per request |
-| Counts (full-archive), Trends | $0.01 per request |
-
-Estimate = (resources requested × per-resource price) + per-request price. `max_results` bounds a read: a search with `max_results=100` returning posts + expanded authors can cost ~100 × $0.005 + 100 × $0.01. Each pagination page bills again.
+Estimate = (resources requested × per-resource price) + per-request price. `max_results` bounds a read: a search with `max_results=100` returning posts + expanded authors can cost ~100 × $0.005 + 100 × $0.01. Each pagination page bills again. Only request expansions you'll use — expanded objects bill too.
 
 **Under ~$0.25:** just do it — don't nag about pennies. Keep `max_results` small (10–25) unless they asked for more.
 
@@ -152,7 +141,7 @@ Request fields. If the tool takes `tweet.fields` or `post.fields`, send `created
 
 `meta.next_token` → `pagination_token`. Stop when `next_token` is omitted.
 
-Reads bill per resource. Prefer recent counts, then `{me}` reads, then a small full-archive page. Recent window is 7 days.
+Prefer recent counts, then `{me}` reads, then a small full-archive page. Recent window is 7 days.
 
 ## Search operators
 
