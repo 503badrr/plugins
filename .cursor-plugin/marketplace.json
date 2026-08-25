@@ -247,6 +247,11 @@
       "name": "calendly",
       "source": "third_party/calendly",
       "description": "Check availability and book, cancel, or reschedule."
+    },
+    {
+      "name": "smartsheet",
+      "source": "third_party/smartsheet",
+      "description": "Query and update sheets, rows, and workspaces."
     }
   ]
 }

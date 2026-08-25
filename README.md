@@ -54,6 +54,7 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `mercury` | [Mercury](third_party/mercury/) | Cursor | Integrations | Read balances, transactions, statements, and cards. |
 | `todoist` | [Todoist](third_party/todoist/) | Cursor | Integrations | Create, find, and complete tasks and projects. |
 | `calendly` | [Calendly](third_party/calendly/) | Cursor | Integrations | Check availability and book, cancel, or reschedule. |
+| `smartsheet` | [Smartsheet](third_party/smartsheet/) | Cursor | Integrations | Query and update sheets, rows, and workspaces. |
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 
 ## Repository structure
