@@ -282,6 +282,11 @@
       "name": "fathom",
       "source": "third_party/fathom",
       "description": "Search meetings and pull transcripts and summaries."
+    },
+    {
+      "name": "craft",
+      "source": "third_party/craft",
+      "description": "Search, create, and update documents and daily notes."
     }
   ]
 }
