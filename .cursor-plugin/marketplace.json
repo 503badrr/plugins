@@ -292,6 +292,11 @@
       "name": "mem",
       "source": "third_party/mem",
       "description": "Capture, search, and organize notes and collections."
+    },
+    {
+      "name": "readwise",
+      "source": "third_party/readwise",
+      "description": "Search highlights and Reader documents, save articles."
     }
   ]
 }
