@@ -192,6 +192,11 @@
       "name": "brevo",
       "source": "third_party/brevo",
       "description": "Manage contacts, email and SMS campaigns, and CRM deals."
+    },
+    {
+      "name": "typeform",
+      "source": "third_party/typeform",
+      "description": "Build forms, analyze responses, and manage contacts."
     }
   ]
 }
