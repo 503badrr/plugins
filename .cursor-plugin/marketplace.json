@@ -287,6 +287,11 @@
       "name": "craft",
       "source": "third_party/craft",
       "description": "Search, create, and update documents and daily notes."
+    },
+    {
+      "name": "mem",
+      "source": "third_party/mem",
+      "description": "Capture, search, and organize notes and collections."
     }
   ]
 }
