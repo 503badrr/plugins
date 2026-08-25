@@ -267,6 +267,11 @@
       "name": "guru",
       "source": "third_party/guru",
       "description": "Search company knowledge and draft verified answers."
+    },
+    {
+      "name": "fireflies",
+      "source": "third_party/fireflies",
+      "description": "Search meeting transcripts, summaries, and action items."
     }
   ]
 }
