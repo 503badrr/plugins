@@ -212,6 +212,11 @@
       "name": "ahrefs",
       "source": "third_party/ahrefs",
       "description": "Research keywords, backlinks, rankings, and site health."
+    },
+    {
+      "name": "godaddy",
+      "source": "third_party/godaddy",
+      "description": "Brainstorm domain names and check availability."
     }
   ]
 }
