@@ -312,6 +312,11 @@
       "name": "activecampaign",
       "source": "third_party/activecampaign",
       "description": "Manage contacts, campaigns, automations, and deals."
+    },
+    {
+      "name": "xero",
+      "source": "third_party/xero",
+      "description": "Read and write invoices, contacts, reports, and payroll."
     }
   ]
 }
