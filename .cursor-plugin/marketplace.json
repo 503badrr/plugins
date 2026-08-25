@@ -232,6 +232,11 @@
       "name": "brex",
       "source": "third_party/brex",
       "description": "Query expenses, receipts, bills, cards, and travel."
+    },
+    {
+      "name": "mercury",
+      "source": "third_party/mercury",
+      "description": "Read balances, transactions, statements, and cards."
     }
   ]
 }
