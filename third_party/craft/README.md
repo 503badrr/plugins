@@ -46,6 +46,7 @@ The hosted runtime is the source of truth for tool names and schemas.
 
 - Tool calls are scoped to the Craft space selected during authorization.
 - The endpoint URL is the same for everyone — `https://mcp.craft.do/my/mcp`. Per-space scoping happens during OAuth approval, not in the URL.
+- Because a connection is bound to one space, working across several spaces means adding one server entry per space.
 - `stimmt/craft-mcp` on Packagist is an unrelated Craft **CMS** plugin.
 
 ## Docs

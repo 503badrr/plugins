@@ -53,6 +53,7 @@ The hosted runtime is the source of truth for tool names and schemas.
 - Tool calls run with the permissions of the MCP token, not a per-user identity.
 - `https://mcp.brevo.com/v1/brevo/mcp` exposes all 27 modules at once. Brevo also serves one endpoint per module — for example `https://mcp.brevo.com/v1/brevo_contacts/mcp` — which is a good way to cut the tool count if the full server is too broad.
 - Brevo describes the MCP server as early access, so the tool catalog can change.
+- Brevo runs a second, separate MCP server for documentation search at `https://developers.brevo.com/_mcp/server`. This plugin points at the product server.
 
 ## Docs
 
