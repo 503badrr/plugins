@@ -222,6 +222,11 @@
       "name": "upwork",
       "source": "third_party/upwork",
       "description": "Search talent, post jobs, and manage contracts."
+    },
+    {
+      "name": "workable",
+      "source": "third_party/workable",
+      "description": "Search candidates, move pipelines, and manage HR records."
     }
   ]
 }
