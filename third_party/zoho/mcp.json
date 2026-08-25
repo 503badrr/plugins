@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "zoho": {
+      "type": "http",
+      "url": "${ZOHO_MCP_SERVER_URL}"
+    }
+  }
+}

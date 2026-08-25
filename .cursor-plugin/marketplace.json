@@ -302,6 +302,11 @@
       "name": "similarweb",
       "source": "third_party/similarweb",
       "description": "Analyze website traffic, audiences, and competitors."
+    },
+    {
+      "name": "zoho",
+      "source": "third_party/zoho",
+      "description": "Run tools across CRM, Desk, Books, Projects, and more."
     }
   ]
 }

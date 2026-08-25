@@ -1,0 +1,48 @@
+{
+  "name": "zoho",
+  "displayName": "Zoho",
+  "version": "1.0.0",
+  "minClientVersions": {
+    "cursor": "3.13.0"
+  },
+  "description": "Run tools across CRM, Desk, Books, Projects, and more.",
+  "author": {
+    "name": "Cursor",
+    "email": "plugins@cursor.com"
+  },
+  "homepage": "https://www.zoho.com/mcp/",
+  "repository": "https://github.com/cursor/plugins",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "zoho",
+    "crm",
+    "desk",
+    "books",
+    "projects",
+    "helpdesk",
+    "accounting",
+    "mcp"
+  ],
+  "category": "integrations",
+  "tags": [
+    "zoho",
+    "crm",
+    "mcp",
+    "productivity"
+  ],
+  "variables": {
+    "type": "object",
+    "properties": {
+      "ZOHO_MCP_SERVER_URL": {
+        "type": "string",
+        "title": "Zoho MCP server URL",
+        "description": "Server URL generated for your Zoho MCP server, copied from the Connect section of the Zoho MCP console (mcp.zoho.com, or the console for your data-center region). It embeds an API key \u2014 treat it like a password."
+      }
+    },
+    "required": [
+      "ZOHO_MCP_SERVER_URL"
+    ]
+  },
+  "mcpServers": "./mcp.json"
+}
