@@ -177,6 +177,11 @@
       "name": "klaviyo",
       "source": "third_party/klaviyo",
       "description": "Manage profiles, segments, campaigns, and flows."
+    },
+    {
+      "name": "customer-io",
+      "source": "third_party/customer-io",
+      "description": "Build campaigns, manage segments, and query people."
     }
   ]
 }
