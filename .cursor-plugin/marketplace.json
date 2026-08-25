@@ -227,6 +227,11 @@
       "name": "workable",
       "source": "third_party/workable",
       "description": "Search candidates, move pipelines, and manage HR records."
+    },
+    {
+      "name": "brex",
+      "source": "third_party/brex",
+      "description": "Query expenses, receipts, bills, cards, and travel."
     }
   ]
 }
