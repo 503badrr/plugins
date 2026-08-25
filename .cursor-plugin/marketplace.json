@@ -207,6 +207,11 @@
       "name": "semrush",
       "source": "third_party/semrush",
       "description": "Research keywords, backlinks, traffic, and competitors."
+    },
+    {
+      "name": "ahrefs",
+      "source": "third_party/ahrefs",
+      "description": "Research keywords, backlinks, rankings, and site health."
     }
   ]
 }
