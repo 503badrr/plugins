@@ -277,6 +277,11 @@
       "name": "otter",
       "source": "third_party/otter",
       "description": "Search meeting history and pull full transcripts."
+    },
+    {
+      "name": "fathom",
+      "source": "third_party/fathom",
+      "description": "Search meetings and pull transcripts and summaries."
     }
   ]
 }
