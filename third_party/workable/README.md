@@ -31,6 +31,13 @@ Auth is OAuth 2.0 with dynamic discovery and Dynamic Client Registration. Cursor
 
 MCP is included on every Workable subscription plan at no extra cost, and no admin role is required — access is scoped to the signed-in user's role.
 
+Workable's MCP OAuth checks the client's redirect URI against a pre-approved list. Workable names Cursor as a supported client, but if sign-in fails with a **redirect URI mismatch**, ask Workable Support to allow Cursor's two fixed callbacks:
+
+| Surface | Redirect URI |
+|:--------|:-------------|
+| Desktop | `http://localhost:8787/callback` |
+| Web and Cloud Agents | `https://www.cursor.com/agents/mcp/oauth/callback` |
+
 One quirk worth knowing: every tool except `get_accounts` takes an `account` parameter, so the agent has to call `get_accounts` first and reuse the returned subdomain.
 
 ## What agents can do
