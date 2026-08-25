@@ -252,6 +252,11 @@
       "name": "smartsheet",
       "source": "third_party/smartsheet",
       "description": "Query and update sheets, rows, and workspaces."
+    },
+    {
+      "name": "wrike",
+      "source": "third_party/wrike",
+      "description": "Search projects, create tasks, and post comments."
     }
   ]
 }
