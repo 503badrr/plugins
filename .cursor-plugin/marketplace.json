@@ -307,6 +307,11 @@
       "name": "zoho",
       "source": "third_party/zoho",
       "description": "Run tools across CRM, Desk, Books, Projects, and more."
+    },
+    {
+      "name": "activecampaign",
+      "source": "third_party/activecampaign",
+      "description": "Manage contacts, campaigns, automations, and deals."
     }
   ]
 }
