@@ -257,6 +257,11 @@
       "name": "wrike",
       "source": "third_party/wrike",
       "description": "Search projects, create tasks, and post comments."
+    },
+    {
+      "name": "coda",
+      "source": "third_party/coda",
+      "description": "Search docs, read pages, and update tables."
     }
   ]
 }
