@@ -197,6 +197,11 @@
       "name": "typeform",
       "source": "third_party/typeform",
       "description": "Build forms, analyze responses, and manage contacts."
+    },
+    {
+      "name": "jotform",
+      "source": "third_party/jotform",
+      "description": "Create and edit forms, then read submissions."
     }
   ]
 }
