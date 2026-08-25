@@ -272,6 +272,11 @@
       "name": "fireflies",
       "source": "third_party/fireflies",
       "description": "Search meeting transcripts, summaries, and action items."
+    },
+    {
+      "name": "otter",
+      "source": "third_party/otter",
+      "description": "Search meeting history and pull full transcripts."
     }
   ]
 }
