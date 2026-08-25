@@ -2,7 +2,7 @@
   "mcpServers": {
     "coda": {
       "type": "http",
-      "url": "https://coda.io/apis/mcp"
+      "url": "https://docs.superhuman.com/apis/mcp"
     }
   }
 }

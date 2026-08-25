@@ -10,15 +10,15 @@
     "name": "Cursor",
     "email": "plugins@cursor.com"
   },
-  "homepage": "https://help.coda.io/hc/en-us/articles/44722661982989-Connect-to-the-Coda-MCP",
+  "homepage": "https://help.superhuman.com/hc/en-us/articles/46210076980365-Connect-to-the-Coda-MCP",
   "repository": "https://github.com/cursor/plugins",
   "license": "MIT",
   "logo": "assets/logo.png",
   "keywords": [
     "coda",
+    "superhuman",
     "docs",
     "tables",
-    "superhuman",
     "knowledge",
     "mcp"
   ],
