@@ -217,6 +217,11 @@
       "name": "godaddy",
       "source": "third_party/godaddy",
       "description": "Brainstorm domain names and check availability."
+    },
+    {
+      "name": "upwork",
+      "source": "third_party/upwork",
+      "description": "Search talent, post jobs, and manage contracts."
     }
   ]
 }
