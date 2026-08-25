@@ -297,6 +297,11 @@
       "name": "readwise",
       "source": "third_party/readwise",
       "description": "Search highlights and Reader documents, save articles."
+    },
+    {
+      "name": "similarweb",
+      "source": "third_party/similarweb",
+      "description": "Analyze website traffic, audiences, and competitors."
     }
   ]
 }
