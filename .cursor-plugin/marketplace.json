@@ -182,6 +182,11 @@
       "name": "customer-io",
       "source": "third_party/customer-io",
       "description": "Build campaigns, manage segments, and query people."
+    },
+    {
+      "name": "mailerlite",
+      "source": "third_party/mailerlite",
+      "description": "Manage subscribers, groups, campaigns, and automations."
     }
   ]
 }
