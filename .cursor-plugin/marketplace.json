@@ -262,6 +262,11 @@
       "name": "coda",
       "source": "third_party/coda",
       "description": "Search docs, read pages, and update tables."
+    },
+    {
+      "name": "guru",
+      "source": "third_party/guru",
+      "description": "Search company knowledge and draft verified answers."
     }
   ]
 }
