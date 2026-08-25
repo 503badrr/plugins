@@ -187,6 +187,11 @@
       "name": "mailerlite",
       "source": "third_party/mailerlite",
       "description": "Manage subscribers, groups, campaigns, and automations."
+    },
+    {
+      "name": "brevo",
+      "source": "third_party/brevo",
+      "description": "Manage contacts, email and SMS campaigns, and CRM deals."
     }
   ]
 }
