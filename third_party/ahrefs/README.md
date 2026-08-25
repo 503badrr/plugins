@@ -45,12 +45,14 @@ The hosted runtime is the source of truth for tool names and schemas.
 ## Notes
 
 - Tool calls run as the Ahrefs user who authorizes the connection and consume that account's API units.
-- Ahrefs MCP keys and API v3 keys are separate and not interchangeable. The OAuth consent screen creates the MCP-scoped key for you; you can also mint one under **Account Settings → API Keys → Generate MCP key** and send it as an `Authorization` header instead of using OAuth.
-- The `@ahrefs/mcp` npm package is Ahrefs' old local server. Ahrefs has archived it and recommends against using it — this plugin uses the hosted server instead.
+- Ahrefs MCP keys and API v3 keys are separate and not interchangeable. The OAuth consent screen mints the MCP-scoped key for you; you can also generate one under **Account Settings → API Keys → Generate MCP key** and skip OAuth by sending it as `"headers": {"Authorization": "Bearer <MCP_KEY>"}` instead.
+- The `@ahrefs/mcp` npm package is Ahrefs' old local server, and Ahrefs no longer supports local setup at all: "Local MCP setup is no longer supported. We only support remote MCP server for now."
 
 ## Docs
 
-- Ahrefs MCP introduction: https://docs.ahrefs.com/mcp/docs/introduction
+- Ahrefs MCP: https://ahrefs.com/mcp
+- Getting started with Ahrefs MCP: https://help.ahrefs.com/en/articles/13913559-getting-started-with-ahrefs-mcp
+- Ahrefs for Developers: https://docs.ahrefs.com/
 - Connection settings (Copilot Studio): https://docs.ahrefs.com/mcp/docs/copilot-studio
 - Server URL: https://api.ahrefs.com/mcp/mcp
 

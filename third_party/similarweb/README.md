@@ -54,6 +54,7 @@ The hosted runtime is the source of truth for tool names and schemas.
 
 - Similarweb MCP: https://docs.similarweb.com/api-v5/similarweb-mcp
 - Similarweb MCP (developer portal): https://developers.similarweb.com/docs/similarweb-mcp
+- Cursor integration guide: https://developers.similarweb.com/docs/cursor-mcp-integration
 - Server URL: https://mcp.similarweb.com
 
 Logo is Similarweb's official mark, from the `similarweb` GitHub organization.
