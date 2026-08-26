@@ -65,8 +65,6 @@ Official Cursor plugins for popular developer tools, frameworks, and SaaS produc
 | `mem` | [Mem](third_party/mem/) | Cursor | Integrations | Capture, search, and organize notes and collections. |
 | `readwise` | [Readwise](third_party/readwise/) | Cursor | Integrations | Search highlights and Reader documents, save articles. |
 | `similarweb` | [Similarweb](third_party/similarweb/) | Cursor | Integrations | Analyze website traffic, audiences, and competitors. |
-| `zoho` | [Zoho](third_party/zoho/) | Cursor | Integrations | Run tools across CRM, Desk, Books, Projects, and more. |
-| `activecampaign` | [ActiveCampaign](third_party/activecampaign/) | Cursor | Integrations | Manage contacts, campaigns, automations, and deals. |
 | `xero` | [Xero](third_party/xero/) | Cursor | Integrations | Read and write invoices, contacts, reports, and payroll. |
 Author values match each plugin’s `plugin.json` `author.name` (Cursor lists `plugins@cursor.com` in the manifest).
 

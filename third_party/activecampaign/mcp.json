@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "activecampaign": {
-      "type": "http",
-      "url": "${ACTIVECAMPAIGN_MCP_URL}"
-    }
-  }
-}
