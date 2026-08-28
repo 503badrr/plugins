@@ -3,7 +3,8 @@
   "displayName": "OneDrive",
   "version": "1.0.0",
   "minClientVersions": {
-    "cursor": "3.13.0"
+    "cursor": "3.19.0",
+    "sand": "0.30.0"
   },
   "description": "Browse, search, and read files.",
   "author": {
